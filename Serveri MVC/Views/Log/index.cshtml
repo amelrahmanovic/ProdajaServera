@@ -1,0 +1,27 @@
+﻿@using Serveri_MVC.Models
+
+@{
+    ViewBag.Title = "Log";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<log> logovi = (List<log>) ViewData["logs"];
+}
+
+<h3>Log</h3>
+
+<table class="table table-striped table-bordered">
+    <tr>
+        <th>IP, Browser:</th>
+        <th>Access time:</th>
+        <th>User:</th>
+        <th>Password</th>
+    </tr>
+    @foreach (log x in logovi)
+    {
+        <tr>
+            <th>@x.IP</th>
+            <th>@x.accessTime</th>
+            <th>@x.user</th>
+            <th>@x.password</th>
+        </tr>
+    }
+</table>
